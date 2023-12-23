@@ -5,9 +5,9 @@ const UserCard = (props) => {
   return (
     <Container className='mt-3 mb-3'>
       <Row className='justify-content-md-center'>
-        <Col lg={4}>
+        <Col lg={5}>
           <Card>
-            <Card.Body>
+            <Card.Body className='text-center'>
               <h4>{props.name}</h4>
               <p>{props.email}</p>
               {props.city && props.country && (
