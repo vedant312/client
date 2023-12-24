@@ -33,7 +33,7 @@ const Navigationbar = () => {
             Create User
           </Nav.Link>
         </Nav>
-        <Form inline onSubmit={handleSearch}>
+        <Form inline="true" onSubmit={handleSearch}>
           <Row>
             <Col xs='auto'>
               <Form.Control

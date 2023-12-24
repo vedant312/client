@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Row, Col, Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import Layout from './Layout';
+import Layout from '../layout/Layout';
+import * as userService from '../../services/user.service';
 
 const CreateUser = () => {
   const createUserUrl = 'http://localhost:4000/v1/user/';
@@ -16,7 +17,7 @@ const CreateUser = () => {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const data = {
+    const payload = {
       name,
       email,
       city,
@@ -24,10 +25,9 @@ const CreateUser = () => {
     };
 
     try {
-      const res = await axios.post(`${createUserUrl}`, data);
-
-      if (res.data?.status === 'success') {
-        toast.success('User created successfully!');
+      const res = await userService.createUser(payload);
+      if (res.data.status === 'success') {
+        toast.success('Success Notification !');
         setName('');
         setEmail('');
         setCity('');
@@ -35,12 +35,7 @@ const CreateUser = () => {
         navigate('/');
       }
     } catch (err) {
-      const {
-        data: {
-          errors: { body },
-        },
-      } = err.response;
-      toast.error(`${body[0].message}`);
+      toast.error(`${err.response.data.errors.body[0].message}`);
     }
   };
 

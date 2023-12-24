@@ -1,12 +1,15 @@
-import UsersList from './components/UsersList';
-import CreateUser from './components/CreateUser';
-import RetriveUser from './components/RetrieveUser';
+import UsersList from './components/user/UsersList';
+import CreateUser from './components/user/CreateUser';
+import RetriveUser from './components/user/RetrieveUser';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <>
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<UsersList />} />
