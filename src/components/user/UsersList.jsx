@@ -4,7 +4,6 @@ import Layout from '../layout/Layout';
 import * as userService from '../../services/user.service';
 
 const UsersList = () => {
-  const getAllUsersEndpoint = 'http://localhost:4000/v1/user/all';
   const [users, setUsers] = useState({});
 
   const fetchUsers = async () => {
@@ -29,6 +28,7 @@ const UsersList = () => {
           return (
             <UserCard
               key={user.id}
+              id={user.id}
               name={user.name}
               email={user.email}
               city={user.city}

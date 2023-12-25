@@ -1,5 +1,7 @@
 import React from 'react';
-import { Row, Col, Card, Container } from 'react-bootstrap';
+import { Row, Col, Card, Container, Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { FaPencilAlt } from 'react-icons/fa';
 
 const UserCard = (props) => {
   return (
@@ -8,7 +10,17 @@ const UserCard = (props) => {
         <Col lg={5}>
           <Card>
             <Card.Body className='text-center'>
-              <h4>{props.name}</h4>
+              <h4 style={{ display: 'inline-block' }}>{props.name}</h4>
+              <Button
+                style={{ float: 'right' }}
+                variant="light"
+                as={NavLink}
+                to={`/edit/${props.id}`}
+                size='sm'
+              >
+                <FaPencilAlt size={18} color="blue" />
+              </Button>
+
               <p>{props.email}</p>
               {props.city && props.country && (
                 <p>
