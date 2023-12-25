@@ -30,4 +30,11 @@ const retrieveAllUsers = async () => {
   return res;
 };
 
-export { createUser, editUser, retriveUser, retrieveAllUsers };
+const removeUser = async (id) => {
+  const deleteUserEndpoint = `${baseApiUrl}/v1/user/${id}`;
+
+  const res = await axios.delete(deleteUserEndpoint);
+  return res;
+}
+
+export { createUser, editUser, retriveUser, retrieveAllUsers , removeUser};
