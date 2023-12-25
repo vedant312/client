@@ -9,7 +9,7 @@ import EditUser from './components/user/EditUser';
 
 function App() {
   return (
-    <>
+    <div>
       <ToastContainer />
       <BrowserRouter>
         <Routes>
@@ -19,7 +19,7 @@ function App() {
           <Route path='/edit/:id' element={<EditUser />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
