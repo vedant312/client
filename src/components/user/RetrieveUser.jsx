@@ -32,7 +32,7 @@ const RetriveUser = () => {
         <h3 className='text-center mt-3 mb-3'>Requested User</h3>
         {user ? (
           isloading ? (
-            <div class='d-flex justify-content-center'>
+            <div className='d-flex justify-content-center'>
               <Spinner />
             </div>
           ) : (
