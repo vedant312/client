@@ -2,8 +2,6 @@ import React from 'react';
 import { Row, Col, Card, Container, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { FaPencilAlt } from 'react-icons/fa';
-import * as userService from '../../services/user.service';
-import { toast } from 'react-toastify';
 import RemoveUser from './RemoveUser';
 
 const UserCard = (props) => {
