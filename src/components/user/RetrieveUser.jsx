@@ -29,6 +29,7 @@ const RetriveUser = () => {
         {user ? (
           <UserCard
             key={user.id}
+            id={user.id}
             name={user.name}
             email={user.email}
             city={user.city}
